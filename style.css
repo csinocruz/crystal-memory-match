@@ -1,7 +1,7 @@
 body {
     background-color: black;
     color: #e0fffd;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #music {
@@ -33,26 +33,53 @@ body {
     padding: 10px;
 }
 
-.card {
+.rainbow {
     transition: 4s;
+    border-radius: 5px;
+    height: 184px;
+    width: 158px;
+    /* margin: 5px; */
+    position: relative;
+    display: inline-block;
+	color: #fff;
+	background: linear-gradient(-45deg, hotpink, yellow, cornflowerblue, darkorchid, darkblue);
+	background-size: 200% 100%;
+	-webkit-animation: Gradient 8s ease infinite;
+	-moz-animation: Gradient 8s ease infinite;
+	animation: Gradient 8s ease infinite;
+}
+
+.card {
     border-radius: 5px;
     height: 184px;
     width: 158px;
     margin: 5px;
     position: relative;
     display: inline-block;
-	color: #fff;
-	background: linear-gradient(-45deg, hotpink, yellow, cornflowerblue, darkorchid, darkblue);
-	background-size: 200% 100%;
-	-webkit-animation: Gradient 2s ease 1;
-	-moz-animation: Gradient 2s ease 1;
-	animation: Gradient 2s ease 1;
 }
 
-.card:hover { 
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.front, .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    margin: 5px;
+}
+
+/* .card:hover { 
     box-shadow: 0px 0px 20px 8px #ffffff;
     transition: 1s; 
-}
+} */
 
 @keyframes spinner {
     from {
@@ -70,32 +97,36 @@ body {
     animation:         spinner 1s 1; 
 }
 
-.reveal .back {
+/* .reveal .back {
     display: none;
 }
 
-.card img {
+.reveal {
+    display: none;
+} */
+
+/* .card img {
     height: 184px;
     width: 158px;
     border-radius: 5px; 
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-}
+} */
 
-.front, .back {
+/* .front, .back {
     position: absolute;
     left: 0;
     top: 0;
-    /* height: 100%;
-    width: 100%; */
-}
+    height: 100%;
+    width: 100%;
+} */
 
-.back {
+/* .back {
     position: absolute;
     left: 0;
     top: 0;
-}
+} */
 
 @-webkit-keyframes Gradient {
 	0% {
@@ -194,10 +225,11 @@ button:focus {outline:0;}
 
 @media screen and (max-width: 500px) {
     #crystal-head {
-        height: 30%;
+        height: 65%;
         position: absolute;
-        bottom: -7px;
-        /* filter: blur(10px); */
+        bottom: -65px;
+        filter: blur(4px);
+        margin-left: 67px;
     }
 
     .stats-container {
@@ -206,18 +238,42 @@ button:focus {outline:0;}
     }
 
     #game-area {
-        width: 300px;
+        width: 273px;
         border-radius: 3px;
         padding: 5px;
-        margin-left: 7%;
-        margin-top: 35%;
+        margin-left: 5%;
+        margin-top: 38%;
+    }
+
+    /* .card {
+        position: relative;
+        border-radius: 2px;
+        height: 77px;
+        width: 63px;
+        display: inline-block;
+        margin: 1px;
+    } */
+
+    .card:hover {
+        box-shadow: 0px 0px 12px 1px #ffffff;
+    }
+}
+
+/* @media screen and (max-width: 1160px){
+    #crystal-head {
+        height: 50%;
+        position: absolute;
+        bottom: -17px;
+        filter: blur(4px);
+    }
+
+    #game-area {
+        width: 65%;
+        margin-left: 25%;
     }
 
     .card {
-        border-radius: 2px;
-        height: 64px;
-        width: 50px;
-        display: inline-block;
-        margin: 9px;
+        height: 180px;
+        width: 158px;
     }
-}
+} */
