@@ -16,6 +16,14 @@ body {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
+button {
+    font-family: Cinzel, sans-serif;
+    transition: all 1.5s ease;
+    padding: 3px;
+    background: #e0fffd;
+}
+button:hover { background: #404bff}
+
 #crystal-head {
     position: absolute;
     bottom: 0;
