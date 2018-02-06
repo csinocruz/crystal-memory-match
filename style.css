@@ -7,6 +7,9 @@ body {
     margin: 20px 10px;
     float: right;
 }
+#music:hover {
+    cursor: pointer;
+}
 
 .fa-volume-off {
     margin-right: 10px;
@@ -14,6 +17,25 @@ body {
 
 .stats-container {
     font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: 20px;
+    margin-left: 3%;
+    font-size: x-large;
+}
+
+button {
+    font-family: Cinzel, sans-serif;
+    transition: all 1.5s ease;
+    padding: 3px;
+    background: #e0fffd;
+    border: black;
+    font-weight: bolder;
+    margin-top: 8px;
+}
+button:hover { 
+    background: #404bff;
+    box-shadow: 0px 0px 19px #9e9ce8;
+    color: white;
+    cursor: pointer;
 }
 
 #crystal-head {
@@ -53,5 +75,9 @@ body {
         position: absolute;
         bottom: 0;
         /* filter: blur(10px); */
+    }
+
+    .stats-container {
+        font-size: 3vmin;
     }
 }
