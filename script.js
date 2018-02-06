@@ -29,5 +29,6 @@ function togglePlay() {
 function initializeApp() {
     $('.card').click(function() {
         console.log('card is being clicked on');
+        $(this).addClass('spin');
     });
 };

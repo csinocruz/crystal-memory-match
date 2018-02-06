@@ -44,9 +44,9 @@ body {
 	color: #fff;
 	background: linear-gradient(-45deg, yellow, hotpink, cornflowerblue, darkorchid, darkblue);
 	background-size: 500% 100%;
-	-webkit-animation: Gradient 8s ease infinite;
-	-moz-animation: Gradient 8s ease infinite;
-	animation: Gradient 8s ease infinite;
+	-webkit-animation: Gradient 2s ease 1;
+	-moz-animation: Gradient 2s ease 1;
+	animation: Gradient 2s ease 1;
 }
 
 .card:hover { 
@@ -59,7 +59,7 @@ body {
       transform: rotateY(0deg);
     }
     to {
-      transform: rotateY(180deg);
+      transform: rotateY(360deg);
     }
 }
 
