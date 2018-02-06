@@ -42,8 +42,8 @@ body {
     position: relative;
     display: inline-block;
 	color: #fff;
-	background: linear-gradient(-45deg, yellow, hotpink, cornflowerblue, darkorchid, darkblue);
-	background-size: 500% 100%;
+	background: linear-gradient(-45deg, hotpink, yellow, cornflowerblue, darkorchid, darkblue);
+	background-size: 200% 100%;
 	-webkit-animation: Gradient 2s ease 1;
 	-moz-animation: Gradient 2s ease 1;
 	animation: Gradient 2s ease 1;
