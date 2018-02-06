@@ -1,6 +1,7 @@
 body {
     background-color: black;
     color: #e0fffd;
+    overflow: hidden;
 }
 
 #music {
@@ -17,19 +18,129 @@ body {
 
 .stats-container {
     font-family: 'Open Sans Condensed', sans-serif;
-    margin-top: 20px;
+    padding-top: 40px;
     margin-left: 3%;
     font-size: x-large;
+}
+
+#game-area {
+    width: 700px;
+    position: absolute;
+    margin-left: 38%;
+    margin-top: 5%;
+    z-index: 1;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.card {
+    transition: 4s;
+    border-radius: 5px;
+    height: 184px;
+    width: 158px;
+    margin: 5px;
+    position: relative;
+    display: inline-block;
+	color: #fff;
+	background: linear-gradient(-45deg, yellow, hotpink, cornflowerblue, darkorchid, darkblue);
+	background-size: 500% 100%;
+	-webkit-animation: Gradient 2s ease 1;
+	-moz-animation: Gradient 2s ease 1;
+	animation: Gradient 2s ease 1;
+}
+
+.card:hover { 
+    box-shadow: 0px 0px 20px 8px #ffffff;
+    transition: 1s; 
+}
+
+@keyframes spinner {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+}
+
+.spin {
+    -webkit-animation: spinner 1s 1; 
+    -moz-animation:    spinner 1s 1; 
+    -o-animation:      spinner 1s 1; 
+    animation:         spinner 1s 1; 
+}
+
+.reveal .back {
+    display: none;
+}
+
+.card img {
+    height: 184px;
+    width: 158px;
+    border-radius: 5px; 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.front, .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* height: 100%;
+    width: 100%; */
+}
+
+.back {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
 
 button {
     font-family: Cinzel, sans-serif;
     transition: all 1.5s ease;
-    padding: 3px;
+    padding: 3px 7px;
     background: #e0fffd;
     border: black;
-    font-weight: bolder;
     margin-top: 8px;
+    font-size: 2vmin;
 }
 button:hover { 
     background: #404bff;
@@ -37,10 +148,11 @@ button:hover {
     color: white;
     cursor: pointer;
 }
+button:focus {outline:0;}
 
 #crystal-head {
     position: absolute;
-    bottom: 0;
+    bottom: -17px;
     /* filter: blur(10px); */
 }
 
@@ -49,7 +161,18 @@ button:hover {
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
-  }
+}
+
+#credit {
+    display: none;
+    font-family: Cinzel, sans-serif;
+    font-size: 8px;
+    color: #e0fffd;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+}
 
 @keyframes shake {
     10%, 90% {
@@ -73,11 +196,28 @@ button:hover {
     #crystal-head {
         height: 30%;
         position: absolute;
-        bottom: 0;
+        bottom: -7px;
         /* filter: blur(10px); */
     }
 
     .stats-container {
         font-size: 3vmin;
+        padding-top: 10px;
+    }
+
+    #game-area {
+        width: 300px;
+        border-radius: 3px;
+        padding: 5px;
+        margin-left: 7%;
+        margin-top: 35%;
+    }
+
+    .card {
+        border-radius: 2px;
+        height: 64px;
+        width: 50px;
+        display: inline-block;
+        margin: 9px;
     }
 }
