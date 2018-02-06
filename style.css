@@ -19,6 +19,7 @@ body {
     font-family: 'Open Sans Condensed', sans-serif;
     margin-top: 20px;
     margin-left: 3%;
+    font-size: x-large;
 }
 
 button {
@@ -28,6 +29,7 @@ button {
     background: #e0fffd;
     border: black;
     font-weight: bolder;
+    margin-top: 8px;
 }
 button:hover { 
     background: #404bff;
@@ -73,5 +75,9 @@ button:hover {
         position: absolute;
         bottom: 0;
         /* filter: blur(10px); */
+    }
+
+    .stats-container {
+        font-size: 3vmin;
     }
 }
