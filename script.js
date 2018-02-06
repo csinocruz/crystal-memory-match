@@ -27,10 +27,8 @@ function togglePlay() {
 }
 
 function initializeApp() {
-    createCards();
-    $('.card').click(clickHandler);
+    $('.card').click(function() {
+        console.log('card is being clicked on');
+        $(this).toggleClass('reveal');
+    });
 };
-
-function createCards(deck) {
-
-}
