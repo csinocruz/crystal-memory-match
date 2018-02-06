@@ -1,9 +1,13 @@
 $(document).ready(function(){
-    $("#music").click(function(){
+    $('#music').click(function(){
         togglePlay();
         $('.fa-volume-up').toggleClass('fas fa-volume-off');
         $('.fa-volume-off').toggleClass('fas fa-volume-up');
     });
+    initializeApp();
+    $('.stats-container button').click(function() {
+        console.log('reset button clicked');
+    })
 });
 
 var audio = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/soundscape.mp3');
@@ -20,4 +24,13 @@ function togglePlay() {
         audio.play();
         isPlaying = true;
     }
+}
+
+function initializeApp() {
+    createCards();
+    $('.card').click(clickHandler);
+};
+
+function createCards(deck) {
+
 }
