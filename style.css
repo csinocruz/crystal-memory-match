@@ -1,4 +1,5 @@
 body {
+    font-family: 'Cinzel', sans-serif;
     background-color: black;
     color: #e0fffd;
     /* overflow: hidden; */
@@ -17,7 +18,6 @@ body {
 }
 
 .stats-container {
-    font-family: 'Open Sans Condensed', sans-serif;
     padding-top: 40px;
     margin-left: 3%;
     font-size: x-large;
@@ -33,12 +33,23 @@ body {
     padding: 10px;
 }
 
-.rainbow {
-    transition: 4s;
-    border-radius: 5px;
+.card {
     height: 184px;
     width: 158px;
-    /* margin: 5px; */
+    margin: 5px;
+    position: relative;
+    display: inline-block;
+    transition: 1s; 
+}
+.card:hover { 
+    box-shadow: 0px 0px 20px 8px #ffffff;
+    transition: 1s; 
+}
+
+.rainbow {
+    transition: 4s;
+    height: 184px;
+    width: 158px;
     position: relative;
     display: inline-block;
 	color: #fff;
@@ -46,22 +57,13 @@ body {
 	background-size: 200% 100%;
 	-webkit-animation: Gradient 8s ease infinite;
 	-moz-animation: Gradient 8s ease infinite;
-	animation: Gradient 8s ease infinite;
-}
-
-.card {
-    border-radius: 5px;
-    height: 184px;
-    width: 158px;
-    margin: 5px;
-    position: relative;
-    display: inline-block;
+    animation: Gradient 8s ease infinite;
+    animation-direction: normal;
 }
 
 .card img {
     width: 100%;
     height: 100%;
-    border-radius: 5px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -73,13 +75,11 @@ body {
     top: 0;
     height: 100%;
     width: 100%;
-    margin: 5px;
 }
 
-/* .card:hover { 
-    box-shadow: 0px 0px 20px 8px #ffffff;
-    transition: 1s; 
-} */
+.reveal .back {
+    display: none;
+}
 
 @keyframes spinner {
     from {
@@ -96,37 +96,6 @@ body {
     -o-animation:      spinner 1s 1; 
     animation:         spinner 1s 1; 
 }
-
-/* .reveal .back {
-    display: none;
-}
-
-.reveal {
-    display: none;
-} */
-
-/* .card img {
-    height: 184px;
-    width: 158px;
-    border-radius: 5px; 
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-} */
-
-/* .front, .back {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-} */
-
-/* .back {
-    position: absolute;
-    left: 0;
-    top: 0;
-} */
 
 @-webkit-keyframes Gradient {
 	0% {
@@ -196,7 +165,6 @@ button:focus {outline:0;}
 
 #credit {
     display: none;
-    font-family: Cinzel, sans-serif;
     font-size: 8px;
     color: #e0fffd;
     text-decoration: none;
@@ -239,7 +207,7 @@ button:focus {outline:0;}
 
     #game-area {
         width: 273px;
-        border-radius: 3px;
+        /* border-radius: 3px; */
         padding: 5px;
         margin-left: 5%;
         margin-top: 38%;
