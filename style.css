@@ -2,7 +2,7 @@ body {
     font-family: 'Cinzel', sans-serif;
     background-color: black;
     color: #e0fffd;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 #music {
