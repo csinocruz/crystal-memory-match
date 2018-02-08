@@ -53,11 +53,11 @@ body {
     position: relative;
     display: inline-block;
 	color: #fff;
-	background: linear-gradient(-45deg, hotpink, yellow, cornflowerblue, darkorchid, darkblue);
+	background: linear-gradient(-45deg,red, hotpink, yellow, cornflowerblue, darkorchid, darkblue);
 	background-size: 200% 100%;
-	-webkit-animation: Gradient 8s ease infinite;
-	-moz-animation: Gradient 8s ease infinite;
-    animation: Gradient 8s ease infinite;
+	-webkit-animation: Gradient 6s ease infinite;
+	-moz-animation: Gradient 6s ease infinite;
+    animation: Gradient 6s ease infinite;
     animation-direction: normal;
 }
 
