@@ -1,11 +1,16 @@
 body {
+    font-family: 'Cinzel', sans-serif;
     background-color: black;
     color: #e0fffd;
+    overflow: hidden;
 }
 
 #music {
     margin: 20px 10px;
     float: right;
+}
+#music:hover {
+    cursor: pointer;
 }
 
 .fa-volume-off {
@@ -13,12 +18,141 @@ body {
 }
 
 .stats-container {
-    font-family: 'Open Sans Condensed', sans-serif;
+    padding-top: 40px;
+    margin-left: 3%;
+    font-size: x-large;
 }
+
+#game-area {
+    width: 700px;
+    position: absolute;
+    margin-left: 38%;
+    margin-top: 5%;
+    z-index: 1;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.card {
+    height: 184px;
+    width: 158px;
+    margin: 5px;
+    position: relative;
+    display: inline-block;
+    transition: 1s; 
+}
+.card:hover { 
+    box-shadow: 0px 0px 20px 8px #ffffff;
+    transition: 1s; 
+}
+
+.rainbow {
+    transition: 4s;
+    height: 184px;
+    width: 158px;
+    position: relative;
+    display: inline-block;
+	color: #fff;
+	background: linear-gradient(-45deg, hotpink, yellow, cornflowerblue, darkorchid, darkblue);
+	background-size: 200% 100%;
+	-webkit-animation: Gradient 8s ease infinite;
+	-moz-animation: Gradient 8s ease infinite;
+    animation: Gradient 8s ease infinite;
+    animation-direction: normal;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.front, .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.reveal .back {
+    display: none;
+}
+
+@keyframes spinner {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+}
+
+.spin {
+    -webkit-animation: spinner 1s 1; 
+    -moz-animation:    spinner 1s 1; 
+    -o-animation:      spinner 1s 1; 
+    animation:         spinner 1s 1; 
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+button {
+    font-family: Cinzel, sans-serif;
+    transition: all 1.5s ease;
+    padding: 3px 7px;
+    background: #e0fffd;
+    border: black;
+    margin-top: 8px;
+    font-size: 2vmin;
+}
+button:hover { 
+    background: #404bff;
+    box-shadow: 0px 0px 19px #9e9ce8;
+    color: white;
+    cursor: pointer;
+}
+button:focus {outline:0;}
 
 #crystal-head {
     position: absolute;
-    bottom: 0;
+    bottom: -17px;
     /* filter: blur(10px); */
 }
 
@@ -27,7 +161,17 @@ body {
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
-  }
+}
+
+#credit {
+    display: none;
+    font-size: 8px;
+    color: #e0fffd;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+}
 
 @keyframes shake {
     10%, 90% {
@@ -49,9 +193,55 @@ body {
 
 @media screen and (max-width: 500px) {
     #crystal-head {
-        height: 30%;
+        height: 65%;
         position: absolute;
-        bottom: 0;
-        /* filter: blur(10px); */
+        bottom: -65px;
+        filter: blur(4px);
+        margin-left: 67px;
+    }
+
+    .stats-container {
+        font-size: 3vmin;
+        padding-top: 10px;
+    }
+
+    #game-area {
+        width: 273px;
+        /* border-radius: 3px; */
+        padding: 5px;
+        margin-left: 5%;
+        margin-top: 38%;
+    }
+
+    /* .card {
+        position: relative;
+        border-radius: 2px;
+        height: 77px;
+        width: 63px;
+        display: inline-block;
+        margin: 1px;
+    } */
+
+    .card:hover {
+        box-shadow: 0px 0px 12px 1px #ffffff;
     }
 }
+
+/* @media screen and (max-width: 1160px){
+    #crystal-head {
+        height: 50%;
+        position: absolute;
+        bottom: -17px;
+        filter: blur(4px);
+    }
+
+    #game-area {
+        width: 65%;
+        margin-left: 25%;
+    }
+
+    .card {
+        height: 180px;
+        width: 158px;
+    }
+} */
