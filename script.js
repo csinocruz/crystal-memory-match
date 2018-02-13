@@ -24,10 +24,6 @@ var audio = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match
 audio.loop = true;
 audio.play();
 
-// card match sound
-// var sparkle = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/twinkle.mp3');
-// sparkle.volume = 0.2;
-
 var isPlaying = true;
 
 function togglePlay() {
@@ -120,3 +116,5 @@ function clickHandler() {
         }
     }
 }
+// ***** end of function clickHandler *****
+
