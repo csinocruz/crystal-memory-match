@@ -1,20 +1,23 @@
 body {
-    font-family: 'Cinzel', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
     background-color: black;
     color: #e0fffd;
     overflow: hidden;
 }
 
 #music {
+    opacity: 0.2;
     margin: 20px 10px;
     float: right;
 }
 #music:hover {
+    opacity: 1;
     cursor: pointer;
 }
 
 .fa-volume-off {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .stats-container {
@@ -24,7 +27,7 @@ body {
 }
 
 #game-area {
-    width: 700px;
+    width: 720px;
     position: absolute;
     margin-left: 38%;
     margin-top: 5%;
@@ -34,15 +37,18 @@ body {
 }
 
 .card {
+    border-color: #9d75f1;
+    border-style: outset;
+    border-width: 4px;
     height: 184px;
     width: 158px;
     margin: 5px;
     position: relative;
     display: inline-block;
-    transition: 1s; 
+    transition: 2s; 
 }
 .card:hover { 
-    box-shadow: 0px 0px 20px 8px #ffffff;
+    box-shadow: 0px 0px 20px 1px #ffffff;
     transition: 1s; 
 }
 
@@ -53,11 +59,11 @@ body {
     position: relative;
     display: inline-block;
 	color: #fff;
-	background: linear-gradient(-45deg, hotpink, yellow, cornflowerblue, darkorchid, darkblue);
+	background: linear-gradient(-45deg,red, hotpink, yellow, cornflowerblue, darkorchid, darkblue);
 	background-size: 200% 100%;
-	-webkit-animation: Gradient 8s ease infinite;
-	-moz-animation: Gradient 8s ease infinite;
-    animation: Gradient 8s ease infinite;
+	-webkit-animation: Gradient 6s ease infinite;
+	-moz-animation: Gradient 6s ease infinite;
+    animation: Gradient 6s ease infinite;
     animation-direction: normal;
 }
 
@@ -134,7 +140,8 @@ body {
 }
 
 button {
-    font-family: Cinzel, sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
     transition: all 1.5s ease;
     padding: 3px 7px;
     background: #e0fffd;
