@@ -34,12 +34,12 @@ function togglePlay() {
         audio.play();
         isPlaying = true;
     }
-}
+};
 
 // app initiation
 function initializeApp() {
-    var readyDeck = shuffleDeck(deck);
-    createCards(readyDeck);
+    // var readyDeck = shuffleDeck(deck);
+    // createCards(readyDeck);
     $('.card').click(clickHandler);
 };
 
@@ -117,7 +117,7 @@ function clickHandler() {
             }, 2500);
         }
     }
-}
+};
 // ***** end of function clickHandler *****
 
 // card images
@@ -140,8 +140,17 @@ var deck = [
     'assets/polygon-animals/wolf.jpg',
 ];
 
+// pick 8 random cards
+function pickRandomCards() {
+    for (i=0; i<8; i++) {
+        var randomNum = Math.floor(Math.random() * deck.length);
+        console.log(deck[randomNum]);
+    }
+    
+};
+
 // shuffle cards
-function shuffleDeck(deck) {
+function shuffle(shuffledDeck) {
     console.log('shuffle deck of cards function has been called');
     var j, x, i;
     for (i = deck.length - 1; i > 0; i--) {
@@ -150,10 +159,13 @@ function shuffleDeck(deck) {
         deck[i] = deck[j];
         deck[j] = x;
     }
-    return deck;
-}
+    // return shuffledDeck;
+    createCards(shuffledDeck);
+};
 
 // append cards to DOM
-function createCards(deck) {
+function createCards(cards) {
     console.log('create cards function has been called');
-}
+    console.log(cards);
+};
+// ***** end of function createCards *****
