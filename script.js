@@ -38,6 +38,8 @@ function togglePlay() {
 
 // app initiation
 function initializeApp() {
+    var readyDeck = shuffleDeck(deck);
+    createCards(readyDeck);
     $('.card').click(clickHandler);
 };
 
@@ -140,6 +142,7 @@ var deck = [
 
 // shuffle cards
 function shuffleDeck(deck) {
+    console.log('shuffle deck of cards function has been called');
     var j, x, i;
     for (i = deck.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
@@ -147,9 +150,10 @@ function shuffleDeck(deck) {
         deck[i] = deck[j];
         deck[j] = x;
     }
+    return deck;
 }
 
 // append cards to DOM
 function createCards(deck) {
-
+    console.log('create cards function has been called');
 }
