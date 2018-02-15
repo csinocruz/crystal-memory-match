@@ -118,3 +118,38 @@ function clickHandler() {
 }
 // ***** end of function clickHandler *****
 
+// card images
+var deck = [
+    'assets/polygon-animals/bear.jpg',
+    'assets/polygon-animals/buck.jpg',
+    'assets/polygon-animals/cat.jpg',
+    'assets/polygon-animals/cow.jpg',
+    'assets/polygon-animals/eagle.jpg',
+    'assets/polygon-animals/elephant.jpg',
+    'assets/polygon-animals/fawn.jpg',
+    'assets/polygon-animals/fox.jpg',
+    'assets/polygon-animals/gorilla.jpg',
+    'assets/polygon-animals/lion.jpg',
+    'assets/polygon-animals/owl.jpg',
+    'assets/polygon-animals/panda.jpg',
+    'assets/polygon-animals/pug.jpg',
+    'assets/polygon-animals/rabbit.jpg',
+    'assets/polygon-animals/tiger.jpg',
+    'assets/polygon-animals/wolf.jpg',
+];
+
+// shuffle cards
+function shuffleDeck(deck) {
+    var j, x, i;
+    for (i = deck.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = deck[i];
+        deck[i] = deck[j];
+        deck[j] = x;
+    }
+}
+
+// append cards to DOM
+function createCards(deck) {
+
+}
