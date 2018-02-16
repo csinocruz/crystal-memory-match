@@ -38,8 +38,7 @@ function togglePlay() {
 
 // app initiation
 function initializeApp() {
-    // var readyDeck = shuffleDeck(deck);
-    // createCards(readyDeck);
+    pickRandomCards(deck);
     $('.card').click(clickHandler);
 };
 
@@ -149,30 +148,45 @@ function pickRandomCards(the_deck) {
         var randomNum = Math.floor(Math.random() * cards.length);
         count++;
         console.log('Card #' + count + ': ' + cards[randomNum]);
-        selectedCards.push(cards[randomNum]);
+        selectedCards.push(cards[randomNum], cards[randomNum]);
         cards.splice(randomNum, 1);
     }
+    shuffle(selectedCards);
     // return selectedCards;
-    console.log(selectedCards);
+    // console.log(selectedCards);
 };
 
 // shuffle cards
 function shuffle(shuffledDeck) {
-    console.log('shuffle deck of cards function has been called');
     var j, x, i;
-    for (i = deck.length - 1; i > 0; i--) {
+    for (i = shuffledDeck.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
-        x = deck[i];
-        deck[i] = deck[j];
-        deck[j] = x;
+        x = shuffledDeck[i];
+        shuffledDeck[i] = shuffledDeck[j];
+        shuffledDeck[j] = x;
     }
-    // return shuffledDeck;
     createCards(shuffledDeck);
+    // return shuffledDeck;
+    // createCards(shuffledDeck);
 };
 
 // append cards to DOM
 function createCards(cards) {
-    console.log('create cards function has been called');
     console.log(cards);
+
+    for (var i=0; i<cards.length; i++) {
+        // creates the front of the card
+        var img = $('<img />').attr('src', cards[i]);
+        var front = $('<div>').addClass('front').append(img);
+        
+        // creates the back of the card
+        var rainbow = $('<div>').addClass('rainbow');
+        var back = $('<div>').addClass('back').append(rainbow);
+        
+        // appends the card to the game-area, DOM
+        var card = $('<div>').addClass('card').append(front, back);
+        $('#game-area').append(card);
+    }
+
 };
 // ***** end of function createCards *****
