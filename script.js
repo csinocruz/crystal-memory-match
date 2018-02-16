@@ -141,13 +141,19 @@ var deck = [
 ];
 
 // pick 8 random cards
-function pickRandomCards() {
+function pickRandomCards(the_deck) {
+    var cards = the_deck;
+    var count = null;
+    var selectedCards = [];
     for (i=0; i<8; i++) {
-        var randomNum = Math.floor(Math.random() * deck.length);
-        deck.splice(randomNum);
-        console.log(deck[randomNum]);
+        var randomNum = Math.floor(Math.random() * cards.length);
+        count++;
+        console.log('Card #' + count + ': ' + cards[randomNum]);
+        selectedCards.push(cards[randomNum]);
+        cards.splice(randomNum, 1);
     }
-    
+    // return selectedCards;
+    console.log(selectedCards);
 };
 
 // shuffle cards
