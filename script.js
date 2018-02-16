@@ -144,6 +144,7 @@ var deck = [
 function pickRandomCards() {
     for (i=0; i<8; i++) {
         var randomNum = Math.floor(Math.random() * deck.length);
+        deck.splice(randomNum);
         console.log(deck[randomNum]);
     }
     
