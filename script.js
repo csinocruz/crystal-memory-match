@@ -149,25 +149,26 @@ function pickRandomCards(the_deck) {
         var randomNum = Math.floor(Math.random() * cards.length);
         count++;
         console.log('Card #' + count + ': ' + cards[randomNum]);
-        selectedCards.push(cards[randomNum]);
+        selectedCards.push(cards[randomNum], cards[randomNum]);
         cards.splice(randomNum, 1);
     }
-    // return selectedCards;
-    console.log(selectedCards);
+    return selectedCards;
+    // console.log(selectedCards);
 };
 
 // shuffle cards
 function shuffle(shuffledDeck) {
     console.log('shuffle deck of cards function has been called');
     var j, x, i;
-    for (i = deck.length - 1; i > 0; i--) {
+    for (i = shuffledDeck.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
-        x = deck[i];
-        deck[i] = deck[j];
-        deck[j] = x;
+        x = shuffledDeck[i];
+        shuffledDeck[i] = shuffledDeck[j];
+        shuffledDeck[j] = x;
     }
+    console.log(shuffledDeck);
     // return shuffledDeck;
-    createCards(shuffledDeck);
+    // createCards(shuffledDeck);
 };
 
 // append cards to DOM
