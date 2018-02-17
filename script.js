@@ -10,20 +10,18 @@ $(document).ready(function(){
     })
 });
 
-// global variables
-var first_card_clicked = null;
-var second_card_clicked = null;
-match_counter = 0;
-total_matches_counter = 0; 
-attempts = 0;
-accuracy = 0;
-gamesPlayed = 0;
+var firstCardClicked = null;
+var secondCardClicked = null;
+var matchCounter = 0;
+var totalMatchesCounter = 0; 
+var attempts = 0;
+var accuracy = 0;
+var gamesPlayed = 0;
 
 // music toggle
 var audio = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/soundscape.mp3');
 audio.loop = true;
 audio.play();
-
 var isPlaying = true;
 
 function togglePlay() {
@@ -36,14 +34,12 @@ function togglePlay() {
     }
 };
 
-// app initiation
 function initializeApp() {
-    pickRandomCards(deck);
+    pickRandomCards(animalImages);
     $('.card').click(clickHandler);
 };
 
 function clickHandler() {
-    console.log('user clicked on a card');
     var the_card = $(this);
     the_card.addClass('spin');
     setTimeout(function () {
@@ -51,76 +47,78 @@ function clickHandler() {
     }, 500);
 
     // check whether it is first or second card clicked
-    if (first_card_clicked === null) {
-        first_card_clicked = $(this);
+    if (firstCardClicked === null) {
+        firstCardClicked = $(this);
     } else {
-        second_card_clicked = $(this);
+        secondCardClicked = $(this);
 
         // check for match
-        if (first_card_clicked.find('img').attr('src') === second_card_clicked.find('img').attr('src')) {
+        if (firstCardClicked.find('img').attr('src') === secondCardClicked.find('img').attr('src')) {
             var sparkle = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/twinkle.mp3');
             sparkle.volume = 0.2;
             sparkle.play();
             setTimeout(function () {
                 sparkle.pause();
             }, 4600);
-            console.log('we have matching cards');
             setTimeout(function() {
-                first_card_clicked.css({
+                firstCardClicked.css({
                     'opacity': '0'
                 });
-                $(first_card_clicked).toggleClass('spin');
-                first_card_clicked = null;
+                $(firstCardClicked).toggleClass('spin');
+                firstCardClicked = null;
             }, 1100);
             setTimeout(function() {
-                second_card_clicked.css({
+                secondCardClicked.css({
                     'opacity': '0'
                 });
-                $(second_card_clicked).toggleClass('spin');
-                second_card_clicked = null;
+                $(secondCardClicked).toggleClass('spin');
+                secondCardClicked = null;
             }, 1100);
-            match_counter++;
-            total_matches_counter++;
+            matchCounter++;
+            if (matchCounter === 8) {
+                console.log('You have found all of the matching cards!');
+            }
+            // if user plays multiple games
+            totalMatchesCounter++;
         } else {
-            console.log('cards are not a match');
             // handles for the first card
             setTimeout(function() {
-                first_card_clicked.removeClass('spin');
+                firstCardClicked.removeClass('spin');
                 can_click = true;
             }, 1000);
             setTimeout(function () {
-                first_card_clicked.addClass('spin');
+                firstCardClicked.addClass('spin');
             }, 1500);
             setTimeout(function () {
-                first_card_clicked.toggleClass('reveal');
+                firstCardClicked.toggleClass('reveal');
             }, 2000);
             setTimeout(function () {
-                first_card_clicked.removeClass('spin');
-                first_card_clicked = null;
+                firstCardClicked.removeClass('spin');
+                firstCardClicked = null;
             }, 2500);
 
             // handles for the second card
             setTimeout(function() {
-                second_card_clicked.removeClass('spin');
+                secondCardClicked.removeClass('spin');
                 can_click = true;
             }, 1000);
             setTimeout(function () {
-                second_card_clicked.addClass('spin');
+                secondCardClicked.addClass('spin');
             }, 1500);
             setTimeout(function () {
-                second_card_clicked.toggleClass('reveal');
+                secondCardClicked.toggleClass('reveal');
             }, 2000);
             setTimeout(function () {
-                second_card_clicked.removeClass('spin');
-                second_card_clicked = null;
+                secondCardClicked.removeClass('spin');
+                secondCardClicked = null;
             }, 2500);
         }
+        attempts++;
     }
 };
 // ***** end of function clickHandler *****
 
-// card images
-var deck = [
+var animalImages = [
     'assets/polygon-animals/bear.jpg',
     'assets/polygon-animals/buck.jpg',
     'assets/polygon-animals/cat.jpg',
@@ -139,9 +137,8 @@ var deck = [
     'assets/polygon-animals/wolf.jpg',
 ];
 
-// pick 8 random cards
-function pickRandomCards(the_deck) {
-    var cards = the_deck;
+function pickRandomCards(deck) {
+    var cards = deck;
     var count = null;
     var selectedCards = [];
     for (i=0; i<8; i++) {
@@ -152,11 +149,8 @@ function pickRandomCards(the_deck) {
         cards.splice(randomNum, 1);
     }
     shuffle(selectedCards);
-    // return selectedCards;
-    // console.log(selectedCards);
 };
 
-// shuffle cards
 function shuffle(shuffledDeck) {
     var j, x, i;
     for (i = shuffledDeck.length - 1; i > 0; i--) {
@@ -165,15 +159,10 @@ function shuffle(shuffledDeck) {
         shuffledDeck[i] = shuffledDeck[j];
         shuffledDeck[j] = x;
     }
-    createCards(shuffledDeck);
-    // return shuffledDeck;
-    // createCards(shuffledDeck);
+    addCardsToDOM(shuffledDeck);
 };
 
-// append cards to DOM
-function createCards(cards) {
-    console.log(cards);
-
+function addCardsToDOM(cards) {
     for (var i=0; i<cards.length; i++) {
         // creates the front of the card
         var img = $('<img />').attr('src', cards[i]);
@@ -187,6 +176,7 @@ function createCards(cards) {
         var card = $('<div>').addClass('card').append(front, back);
         $('#game-area').append(card);
     }
-
 };
-// ***** end of function createCards *****
+
+//accuracy
+parseInt(matchCounter/attempts *100);
