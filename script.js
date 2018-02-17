@@ -14,6 +14,7 @@ audio.loop = true;
 audio.play();
 var isPlaying = true;
 
+var canClick = true;
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matchCounter = 0;
@@ -95,14 +96,8 @@ function addCardsToDOM(cards) {
     }
 };
 
-var canClick = true;
-
-function clickable() {
-    canClick = true;
-};
-
 function clickHandler() {
-    if (canClick === true) {
+    if (canClick) {
         var the_card = $(this);
         the_card.addClass('spin');
         setTimeout(function () {
