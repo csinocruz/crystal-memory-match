@@ -17,6 +17,24 @@ var totalMatchesCounter = 0;
 var attempts = 0;
 var accuracy = 0;
 var gamesPlayed = 0;
+var animalImages = [
+    'assets/polygon-animals/bear.jpg',
+    'assets/polygon-animals/buck.jpg',
+    'assets/polygon-animals/cat.jpg',
+    'assets/polygon-animals/cow.jpg',
+    'assets/polygon-animals/eagle.jpg',
+    'assets/polygon-animals/elephant.jpg',
+    'assets/polygon-animals/fawn.jpg',
+    'assets/polygon-animals/fox.jpg',
+    'assets/polygon-animals/gorilla.jpg',
+    'assets/polygon-animals/lion.jpg',
+    'assets/polygon-animals/owl.jpg',
+    'assets/polygon-animals/panda.jpg',
+    'assets/polygon-animals/pug.jpg',
+    'assets/polygon-animals/rabbit.jpg',
+    'assets/polygon-animals/tiger.jpg',
+    'assets/polygon-animals/wolf.jpg',
+];
 
 // music toggle
 var audio = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/soundscape.mp3');
@@ -77,6 +95,7 @@ function clickHandler() {
             matchCounter++;
             if (matchCounter === 8) {
                 console.log('You have found all of the matching cards!');
+                gamesPlayed++;
             }
             // if user plays multiple games
             totalMatchesCounter++;
@@ -114,28 +133,10 @@ function clickHandler() {
             }, 2500);
         }
         attempts++;
+        updateStats();
     }
 };
 // ***** end of function clickHandler *****
-
-var animalImages = [
-    'assets/polygon-animals/bear.jpg',
-    'assets/polygon-animals/buck.jpg',
-    'assets/polygon-animals/cat.jpg',
-    'assets/polygon-animals/cow.jpg',
-    'assets/polygon-animals/eagle.jpg',
-    'assets/polygon-animals/elephant.jpg',
-    'assets/polygon-animals/fawn.jpg',
-    'assets/polygon-animals/fox.jpg',
-    'assets/polygon-animals/gorilla.jpg',
-    'assets/polygon-animals/lion.jpg',
-    'assets/polygon-animals/owl.jpg',
-    'assets/polygon-animals/panda.jpg',
-    'assets/polygon-animals/pug.jpg',
-    'assets/polygon-animals/rabbit.jpg',
-    'assets/polygon-animals/tiger.jpg',
-    'assets/polygon-animals/wolf.jpg',
-];
 
 function pickRandomCards(deck) {
     var cards = deck;
@@ -178,5 +179,14 @@ function addCardsToDOM(cards) {
     }
 };
 
-//accuracy
-parseInt(matchCounter/attempts *100);
+function updateStats() {
+    accuracy = parseInt(matchCounter/attempts *100);
+    renderStatsToDOM();
+};
+
+function renderStatsToDOM() {
+    $('.games-played-val').text(gamesPlayed);
+    $('.matches-val').text(matchCounter);
+    $('.attempts-val').text(attempts);
+    $('.accuracy-val').text(accuracy + '%');
+};
