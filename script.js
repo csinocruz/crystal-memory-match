@@ -95,84 +95,97 @@ function addCardsToDOM(cards) {
     }
 };
 
+var canClick = true;
+
+function clickable() {
+    canClick = true;
+};
+
 function clickHandler() {
-    var the_card = $(this);
-    the_card.addClass('spin');
-    setTimeout(function () {
-        the_card.toggleClass('reveal');
-    }, 500);
+    if (canClick === true) {
+        var the_card = $(this);
+        the_card.addClass('spin');
+        setTimeout(function () {
+            the_card.toggleClass('reveal');
+        }, 500);
 
-    // check whether it is first or second card clicked
-    if (firstCardClicked === null) {
-        firstCardClicked = $(this);
-    } else {
-        secondCardClicked = $(this);
-
-        // check for match
-        if (firstCardClicked.find('img').attr('src') === secondCardClicked.find('img').attr('src')) {
-            var sparkle = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/twinkle.mp3');
-            sparkle.volume = 0.2;
-            sparkle.play();
-            setTimeout(function () {
-                sparkle.pause();
-            }, 4600);
-            setTimeout(function() {
-                firstCardClicked.css({
-                    'opacity': '0'
-                });
-                $(firstCardClicked).toggleClass('spin');
-                firstCardClicked = null;
-            }, 1100);
-            setTimeout(function() {
-                secondCardClicked.css({
-                    'opacity': '0'
-                });
-                $(secondCardClicked).toggleClass('spin');
-                secondCardClicked = null;
-            }, 1100);
-            matchCounter++;
-            if (matchCounter === 8) {
-                console.log('You have found all of the matching cards!');
-                gamesPlayed++;
-            }
-            // if user plays multiple games
-            totalMatchesCounter++;
+        // check whether it is first or second card clicked
+        if (firstCardClicked === null) {
+            firstCardClicked = $(this).off('click');
         } else {
-            // handles for the first card
-            setTimeout(function() {
-                firstCardClicked.removeClass('spin');
-                can_click = true;
-            }, 1000);
-            setTimeout(function () {
-                firstCardClicked.addClass('spin');
-            }, 1500);
-            setTimeout(function () {
-                firstCardClicked.toggleClass('reveal');
-            }, 2000);
-            setTimeout(function () {
-                firstCardClicked.removeClass('spin');
-                firstCardClicked = null;
-            }, 2500);
+            secondCardClicked = $(this).off('click');
+            canClick = false;
+            // MATCHING **********
+            if (firstCardClicked.find('img').attr('src') === secondCardClicked.find('img').attr('src')) {
+                var sparkle = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/twinkle.mp3');
+                sparkle.volume = 0.2;
+                sparkle.play();
+                // handles for the first card
+                setTimeout(function () {
+                    sparkle.pause();
+                }, 4600);
+                setTimeout(function() {
+                    firstCardClicked.css({
+                        'opacity': '0'
+                    });
+                    $(firstCardClicked).toggleClass('spin');
+                    firstCardClicked = null;
+                }, 1100);
+                // handles for the second card
+                setTimeout(function() {
+                    secondCardClicked.css({
+                        'opacity': '0'
+                    });
+                    $(secondCardClicked).toggleClass('spin');
+                    secondCardClicked = null;
+                    canClick = true;
+                }, 1100);
+                matchCounter++;
+                if (matchCounter === 8) {
+                    console.log('You have found all of the matching cards!');
+                }
+                // if user plays multiple games
+                totalMatchesCounter++;
+            } else { // NOT MATCHING **********
+                firstCardClicked.click(clickHandler);
+                secondCardClicked.click(clickHandler);
 
-            // handles for the second card
-            setTimeout(function() {
-                secondCardClicked.removeClass('spin');
-                can_click = true;
-            }, 1000);
-            setTimeout(function () {
-                secondCardClicked.addClass('spin');
-            }, 1500);
-            setTimeout(function () {
-                secondCardClicked.toggleClass('reveal');
-            }, 2000);
-            setTimeout(function () {
-                secondCardClicked.removeClass('spin');
-                secondCardClicked = null;
-            }, 2500);
+                // handles for the first card
+                setTimeout(function() {
+                    firstCardClicked.removeClass('spin');
+                }, 1000);
+                setTimeout(function () {
+                    firstCardClicked.addClass('spin');
+                }, 1500);
+                setTimeout(function () {
+                    firstCardClicked.toggleClass('reveal');
+                }, 2000);
+                setTimeout(function () {
+                    firstCardClicked.removeClass('spin');
+                    firstCardClicked = null;
+                }, 2500);
+
+                // handles for the second card
+                setTimeout(function() {
+                    secondCardClicked.removeClass('spin');
+                }, 1000);
+                setTimeout(function () {
+                    secondCardClicked.addClass('spin');
+                }, 1500);
+                setTimeout(function () {
+                    secondCardClicked.toggleClass('reveal');
+                }, 2000);
+                setTimeout(function () {
+                    secondCardClicked.removeClass('spin');
+                    secondCardClicked = null;
+                    canClick = true;
+                }, 2500);
+            }
+            attempts++;
+            updateStats();
         }
-        attempts++;
-        updateStats();
     }
+    // ***** end of canClick if statement
 };
 // ***** end of function clickHandler *****
 
