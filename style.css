@@ -6,6 +6,18 @@ body {
     overflow: hidden;
 }
 
+h1 {
+    display: inline-block;
+}
+
+.nav-bar {
+    display: inline-block;
+}
+
+/* li{
+    float: right;
+} */
+
 #music {
     opacity: 0.2;
     margin: 20px 10px;
