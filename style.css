@@ -33,13 +33,22 @@ li {
     cursor: pointer;
 }
 
+a {
+    color: #e0fffd;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* ***** END OF NAVIGATION BAR ***** */
 
 #music {
-    margin: 20px 10px;
     display: inline;
     cursor: pointer;
 }
+#music:hover { text-decoration: underline; }
 
 .fa-volume-off {
     margin-right: 10px;
