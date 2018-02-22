@@ -6,30 +6,43 @@ body {
     overflow: hidden;
 }
 
-h1 {
-    display: inline-block;
+/* ***** NAVIGATION BAR ***** */
+
+.test {
+    margin-top: 15px; 
 }
 
 .nav-bar {
-    display: inline-block;
+    direction: ltr;
+    float: right;
+    margin-top: 20px;
 }
 
-/* li{
-    float: right;
-} */
+.title {
+    font-size: 5vmin;
+}
+
+ul {
+    list-style-type: none;
+    display: inline;
+}
+
+li {
+    display: inline;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+/* ***** END OF NAVIGATION BAR ***** */
 
 #music {
-    opacity: 0.2;
     margin: 20px 10px;
-    float: right;
-}
-#music:hover {
-    opacity: 1;
+    display: inline;
     cursor: pointer;
 }
 
 .fa-volume-off {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .stats-container {
@@ -42,7 +55,7 @@ h1 {
     width: 720px;
     position: absolute;
     margin-left: 38%;
-    margin-top: 5%;
+    margin-top: 10px;
     z-index: 1;
     border-radius: 7px;
     padding: 10px;
