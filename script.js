@@ -12,8 +12,9 @@ $(document).ready(function(){
 var audio = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/soundscape.mp3');
 audio.loop = true;
 audio.play();
-var isPlaying = true;
 
+var musicPlaying = true;
+var modal = $('#instructionsModal');
 var canClick = true;
 var firstCardClicked = null;
 var secondCardClicked = null;
@@ -42,18 +43,20 @@ var animalImages = [
 ];
 
 function togglePlay() {
-    if (isPlaying) {
+    if (musicPlaying) {
         audio.pause()
-        isPlaying = false;
+        musicPlaying = false;
     } else {
         audio.play();
-        isPlaying = true;
+        musicPlaying = true;
     }
 };
 
 function initializeApp() {
     pickRandomCards(animalImages);
     $('.card').click(clickHandler);
+    $('#instructionsLink').click(clickInstructions);
+    $('.close').click(closeModal);
 };
 
 function pickRandomCards(deck) {
@@ -206,28 +209,18 @@ function resetGame() {
     initializeApp();
 };
 
-// Get the modal
-var modal = document.getElementById('myModal');
+// ***** functions for modal *****
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
+function clickInstructions() {
+    modal.css('display', 'block');
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
+function closeModal() {
+    modal.css('display', 'none');
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target.className == 'modal') {
+        modal.css('display', 'none');
     }
 }
