@@ -10,6 +10,7 @@ $(document).ready(function(){
 
 // music toggle
 var audio = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/soundscape.mp3');
+audio.volume = 0.2;
 audio.loop = true;
 audio.play();
 
@@ -115,12 +116,12 @@ function clickHandler() {
             canClick = false;
             // MATCHING **********
             if (firstCardClicked.find('img').attr('src') === secondCardClicked.find('img').attr('src')) {
-                var sparkle = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/twinkle.mp3');
-                sparkle.volume = 0.2;
-                sparkle.play();
+                // var sparkle = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/twinkle.mp3');
+                // sparkle.volume = 0.2;
+                // sparkle.play();
                 // handles for the first card
                 setTimeout(function () {
-                    sparkle.pause();
+                    // sparkle.pause();
                 }, 4600);
                 setTimeout(function() {
                     firstCardClicked.css({
@@ -205,6 +206,7 @@ function resetGame() {
     matchCounter = 0;
     attempts = 0;
     accuracy = 0;
+    renderStatsToDOM();
     $('.card').remove();
     initializeApp();
 };
