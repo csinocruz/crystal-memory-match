@@ -209,7 +209,7 @@ function resetGame() {
     initializeApp();
 };
 
-// ***** functions for modal *****
+// ***** start of functions for modal *****
 
 function clickInstructions() {
     modal.css('display', 'block');
