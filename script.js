@@ -143,6 +143,7 @@ function clickHandler() {
                 matchCounter++;
                 if (matchCounter === 8) {
                     console.log('You have found all of the matching cards!');
+                    nextGame();
                 }
                 // if user plays multiple games
                 totalMatchesCounter++;
@@ -207,6 +208,7 @@ function resetGame() {
     matchCounter = 0;
     attempts = 0;
     accuracy = 0;
+    gamesPlayed = 0;
     renderStatsToDOM();
     $('.card').remove();
     initializeApp();
@@ -225,9 +227,6 @@ function clickNewGame() {
     $('.newGame').remove();
     firstCardClicked = null;
     secondCardClicked = null;
-    matchCounter = 0;
-    attempts = 0;
-    accuracy = 0;
     gamesPlayed++;
     renderStatsToDOM();
     $('.card').remove();
