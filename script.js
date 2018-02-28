@@ -215,11 +215,23 @@ function resetGame() {
 function nextGame() {
     var newGameBtn = $('<button/>', {
         text: 'New Game',
-        click: function () {
-            console.log('hi');
-        }
+        class: 'newGame',
+        click: clickNewGame
     });
     $('.stats-container').append(newGameBtn);
+};
+
+function clickNewGame() {
+    $('.newGame').remove();
+    firstCardClicked = null;
+    secondCardClicked = null;
+    matchCounter = 0;
+    attempts = 0;
+    accuracy = 0;
+    gamesPlayed++;
+    renderStatsToDOM();
+    $('.card').remove();
+    initializeApp();
 };
 
 // ***** start of functions for modal *****
