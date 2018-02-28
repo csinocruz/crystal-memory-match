@@ -57,6 +57,7 @@ function initializeApp() {
     pickRandomCards(animalImages);
     $('.card').click(clickHandler);
     $('#instructionsLink').click(clickInstructions);
+    $('#reset').click(resetGame);
     $('.close').click(closeModal);
 };
 
@@ -184,7 +185,7 @@ function clickHandler() {
             updateStats();
         }
     }
-    // ***** end of canClick if statement
+    // ** end of canClick if statement **
 };
 // ***** end of function clickHandler *****
 
@@ -209,6 +210,16 @@ function resetGame() {
     renderStatsToDOM();
     $('.card').remove();
     initializeApp();
+};
+
+function nextGame() {
+    var newGameBtn = $('<button/>', {
+        text: 'New Game',
+        click: function () {
+            console.log('hi');
+        }
+    });
+    $('.stats-container').append(newGameBtn);
 };
 
 // ***** start of functions for modal *****
