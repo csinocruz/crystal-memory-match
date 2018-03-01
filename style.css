@@ -35,10 +35,9 @@ a {
 }
 
 .nav-bar > ul > li:hover { text-decoration: underline; }
-
 /* ***** END OF NAVIGATION BAR ***** */
 
-/* ***** modal css start ***** */
+/* ***** START OF MODAL ***** */
 .modal {
     display: none; 
     position: fixed; 
@@ -82,7 +81,7 @@ a {
     cursor: auto;
 }
 ol { list-style-type: decimal; }
-/* ***** modal css end ***** */
+/* ***** END OF MODAL ***** */
 
 
 #music {
@@ -248,7 +247,10 @@ button:focus {outline:0;}
     right: 2px;
 }
 
-@media screen and (max-width: 500px) {
+/* ***** START OF MEDIA QUERIES ***** */
+
+/* extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
     #crystal-head {
         height: 65%;
         position: absolute;
@@ -264,41 +266,36 @@ button:focus {outline:0;}
 
     #game-area {
         width: 273px;
-        /* border-radius: 3px; */
         padding: 5px;
         margin-left: 5%;
         margin-top: 38%;
     }
 
-    /* .card {
-        position: relative;
-        border-radius: 2px;
+    .card {
         height: 77px;
         width: 63px;
-        display: inline-block;
-        margin: 1px;
-    } */
-
-    .card:hover {
-        box-shadow: 0px 0px 12px 1px #ffffff;
     }
+
+    .rainbow {
+        height: 77px;
+        width: 63px;
+    }
+
 }
 
-/* @media screen and (max-width: 1160px){
-    #crystal-head {
-        height: 50%;
-        position: absolute;
-        bottom: -17px;
-        filter: blur(4px);
-    }
+/* small devices (landscape phones, less than 768px) */
+@media (max-width: 767px) {
 
-    #game-area {
-        width: 65%;
-        margin-left: 25%;
-    }
+}
 
-    .card {
-        height: 180px;
-        width: 158px;
-    }
-} */
+/* medium devices (tablets, less than 992px) */
+@media (max-width: 991px) {
+
+}
+
+/* large devices (desktops, less than 1200px) */
+@media (max-width: 1199px) {
+
+}
+
+/* ***** END OF MEDIA QUERIES ***** */
