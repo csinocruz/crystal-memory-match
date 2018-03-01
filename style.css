@@ -255,6 +255,14 @@ button:focus {outline:0;}
         display: none;
     }
 
+    .title {
+        font-size: 7vmin;
+    }
+
+    .fa-volume-off {
+        margin-right: 7px;
+    }
+
     .nav-wrap {
         text-align: center;
     }
@@ -285,13 +293,13 @@ button:focus {outline:0;}
 
     .stats-container {
         font-size: 3vmin;
-        padding-top: 10px;
+        padding: 425px 25px 0px 25px;
     }
 
     #game-area {
         width: 309px;
         padding: 5px;
-        margin: 100px 20px 0px 16px
+        margin: 10px 20px 0px 16px
     }
 
     .card {
