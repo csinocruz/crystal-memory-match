@@ -234,7 +234,7 @@ button:focus {outline:0;}
 #crystal-head {
     position: absolute;
     bottom: -17px;
-    /* filter: blur(10px); */
+    z-index: -1;
 }
 
 #credit {
@@ -326,9 +326,47 @@ button:focus {outline:0;}
 
 }
 
-/* small devices (landscape phones, less than 768px) */
-@media (max-width: 767px) {
+/* small devices (landscape phones, less than 769px) */
+@media (max-width: 768px) {
+    .title {
+        font-size: 4vmin;
+        margin-left: 20px;
+    }
 
+    #crystal-head {
+        height: 490px;
+    }
+
+    .nav-wrap {
+        margin-top: 25px;
+    }
+
+    .nav-bar {
+        font-size: 2vmin;
+        margin-top: 5px;
+    }
+
+    .stats-container {
+        font-size: 3vmin;
+    }
+
+    #game-area {
+        width: 390px;
+        padding: 5px;
+    }
+
+    .card {
+        border-width: 2px;
+        height: 97px;
+        width: 73px;
+        padding: 5px;
+    }
+
+    .rainbow {
+        height: 97px;
+        width: 73px;
+        padding: 5px;
+    }
 }
 
 /* medium devices (tablets, less than 992px) */
