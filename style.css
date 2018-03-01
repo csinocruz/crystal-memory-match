@@ -103,7 +103,7 @@ ol { list-style-type: decimal; }
 #game-area {
     width: 720px;
     position: absolute;
-    margin-left: 38%;
+    margin-left: 30%;
     margin-top: 10px;
     z-index: 1;
     border-radius: 7px;
@@ -232,7 +232,7 @@ button:hover {
 button:focus {outline:0;}
 
 #crystal-head {
-    position: absolute;
+    position: fixed;
     bottom: -17px;
     z-index: -1;
 }
@@ -295,7 +295,8 @@ button:focus {outline:0;}
 
     .stats-container {
         font-size: 3vmin;
-        padding: 399px 25px 0px 17px;
+        position: fixed;
+        bottom: 50px;
     }
 
     .label {
@@ -308,20 +309,20 @@ button:focus {outline:0;}
     }
 
     #game-area {
-        width: 309px;
+        width: 80%;
         padding: 5px;
-        margin: 10px 20px 0px 16px
+        margin: auto;
     }
 
     .card {
         border-width: 2px;
-        height: 77px;
-        width: 63px;
+        height: 67px;
+        width: 53px;
     }
 
     .rainbow {
-        height: 77px;
-        width: 63px;
+        height: 67px;
+        width: 53px;
     }
 
 }
@@ -351,27 +352,31 @@ button:focus {outline:0;}
     }
 
     #game-area {
-        width: 390px;
+        width: 380px;
         padding: 5px;
     }
 
     .card {
         border-width: 2px;
-        height: 97px;
-        width: 73px;
-        padding: 5px;
+        height: 95px;
+        width: 81px;
     }
 
     .rainbow {
-        height: 97px;
-        width: 73px;
-        padding: 5px;
+        height: 95px;
+        width: 81px;
     }
 }
 
 /* medium devices (tablets, less than 992px) */
 @media (max-width: 991px) {
+    .title {
+        margin-left: 20px;
+    }
 
+    #crystal-head {
+        height: 490px;
+    }
 }
 
 /* large devices (desktops, less than 1200px) */
