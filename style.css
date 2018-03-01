@@ -252,11 +252,30 @@ button:focus {outline:0;}
 /* extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575px) {
     #crystal-head {
-        height: 65%;
-        position: absolute;
-        bottom: -65px;
-        filter: blur(4px);
-        margin-left: 67px;
+        display: none;
+    }
+
+    .nav-wrap {
+        text-align: center;
+    }
+
+    .nav-wrap ul {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        /* For IE, the outcast */
+        zoom:1;
+        *display: inline;
+    }
+
+    .nav-wrap li {
+        float: left;
+        padding: 2px 5px;
+        border: 1px solid black;
+    }
+
+    .nav-bar > ul > li {
+        font-size: 3vmin;
     }
 
     .stats-container {
@@ -265,13 +284,13 @@ button:focus {outline:0;}
     }
 
     #game-area {
-        width: 273px;
+        width: 309px;
         padding: 5px;
-        margin-left: 5%;
-        margin-top: 38%;
+        margin: 100px 20px 0px 16px
     }
 
     .card {
+        border-width: 2px;
         height: 77px;
         width: 63px;
     }
