@@ -274,6 +274,11 @@ button:focus {outline:0;}
         border: 1px solid black;
     }
 
+    .nav-bar {
+        float: none;
+        margin-top: 10px;
+    }
+
     .nav-bar > ul > li {
         font-size: 3vmin;
     }
