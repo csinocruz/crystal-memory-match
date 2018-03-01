@@ -295,7 +295,8 @@ button:focus {outline:0;}
 
     .stats-container {
         font-size: 3vmin;
-        padding: 399px 25px 0px 17px;
+        position: fixed;
+        bottom: 85px;
     }
 
     .label {
@@ -371,7 +372,13 @@ button:focus {outline:0;}
 
 /* medium devices (tablets, less than 992px) */
 @media (max-width: 991px) {
+    .title {
+        margin-left: 20px;
+    }
 
+    #crystal-head {
+        height: 490px;
+    }
 }
 
 /* large devices (desktops, less than 1200px) */
