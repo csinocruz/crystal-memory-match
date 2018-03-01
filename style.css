@@ -295,7 +295,16 @@ button:focus {outline:0;}
 
     .stats-container {
         font-size: 3vmin;
-        padding: 410px 25px 0px 17px;
+        padding: 399px 25px 0px 17px;
+    }
+
+    .label {
+        margin-bottom: 4px;
+    }
+
+    button {
+        margin-top: 5px;
+        font-size: 3vmin;
     }
 
     #game-area {
