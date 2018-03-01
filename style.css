@@ -252,7 +252,9 @@ button:focus {outline:0;}
 /* extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575px) {
     #crystal-head {
-        display: none;
+        height: 270px;
+        margin-left: 100px;
+        filter: blur(3px);
     }
 
     .title {
@@ -293,7 +295,7 @@ button:focus {outline:0;}
 
     .stats-container {
         font-size: 3vmin;
-        padding: 425px 25px 0px 25px;
+        padding: 410px 25px 0px 17px;
     }
 
     #game-area {
