@@ -251,6 +251,11 @@ button:focus {outline:0;}
 
 /* extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575px) {
+    .modal-content {
+        font-size: 4vmin;
+        width: 70%;
+    }
+
     #crystal-head {
         height: 270px;
         margin-left: 100px;
