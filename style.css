@@ -113,9 +113,9 @@ ol { list-style-type: decimal; }
 .card {
     border-color: #9d75f1;
     border-style: outset;
-    border-width: 4px;
-    height: 184px;
-    width: 158px;
+    border-width: 5px;
+    height: 183px;
+    width: 157px;
     margin: 5px;
     position: relative;
     display: inline-block;
@@ -339,7 +339,7 @@ button:focus {outline:0;}
     }
 
     .nav-wrap {
-        margin-top: 25px;
+        margin-top: 15px;
     }
 
     .nav-bar {
