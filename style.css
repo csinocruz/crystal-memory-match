@@ -373,6 +373,10 @@ button:focus {outline:0;}
     }
 }
 
+@media (max-width: 800px) {
+    
+}
+
 /* medium devices (tablets, less than 992px) */
 @media (max-width: 991px) {
     .title {
