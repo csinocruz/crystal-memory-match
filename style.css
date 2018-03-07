@@ -374,7 +374,21 @@ button:focus {outline:0;}
 }
 
 @media (max-width: 800px) {
-    
+    #game-area {
+        width: 180px;
+        padding: 5px;
+    }
+
+    .card {
+        border-width: 2px;
+        height: 75px;
+        width: 61px;
+    }
+
+    .rainbow {
+        height: 75px;
+        width: 61px;
+    }
 }
 
 /* medium devices (tablets, less than 992px) */
