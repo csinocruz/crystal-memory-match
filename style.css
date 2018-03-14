@@ -373,7 +373,8 @@ button:focus {outline:0;}
     }
 }
 
-@media (max-width: 800px) {
+/* halfway point on browser */
+/* @media (max-width: 800px) {
     #game-area {
         width: 180px;
         padding: 5px;
@@ -389,7 +390,7 @@ button:focus {outline:0;}
         height: 75px;
         width: 61px;
     }
-}
+} */
 
 /* medium devices (tablets, less than 992px) */
 @media (max-width: 991px) {
