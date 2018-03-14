@@ -249,15 +249,16 @@ button:focus {outline:0;}
 
 /* ***** START OF MEDIA QUERIES ***** */
 
-/* extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575px) {
+/* mobiles in portrait mode */
+@media only screen
+and (max-width: 320px) {
     .modal-content {
         font-size: 4vmin;
         width: 70%;
     }
 
     #crystal-head {
-        height: 270px;
+        height: 390px;
         margin-left: 100px;
         filter: blur(3px);
     }
@@ -314,9 +315,10 @@ button:focus {outline:0;}
     }
 
     #game-area {
-        width: 80%;
+        width: 92%;
         padding: 5px;
         margin: auto;
+        position: relative;
     }
 
     .card {
@@ -329,11 +331,97 @@ button:focus {outline:0;}
         height: 67px;
         width: 53px;
     }
-
 }
 
-/* small devices (landscape phones, less than 769px) */
-@media (max-width: 768px) {
+/* mobiles in landscape mode */
+@media only screen
+and (min-width: 321px)
+and (max-width: 480px) {
+    .modal-content {
+        font-size: 4vmin;
+        width: 70%;
+    }
+
+    #crystal-head {
+        height: 390px;
+        margin-left: 100px;
+        filter: blur(3px);
+    }
+
+    .title {
+        font-size: 7vmin;
+    }
+
+    .fa-volume-off {
+        margin-right: 7px;
+    }
+
+    .nav-wrap {
+        text-align: center;
+    }
+
+    .nav-wrap ul {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        /* For IE, the outcast */
+        zoom:1;
+        *display: inline;
+    }
+
+    .nav-wrap li {
+        float: left;
+        padding: 2px 5px;
+        border: 1px solid black;
+    }
+
+    .nav-bar {
+        float: none;
+        margin-top: 10px;
+    }
+
+    .nav-bar > ul > li {
+        font-size: 3vmin;
+    }
+
+    .stats-container {
+        font-size: 3vmin;
+        position: fixed;
+        bottom: 50px;
+    }
+
+    .label {
+        margin-bottom: 4px;
+    }
+
+    button {
+        margin-top: 5px;
+        font-size: 3vmin;
+    }
+
+    #game-area {
+        width: 78%;
+        padding: 5px;
+        margin: auto;
+        position: relative;
+    }
+
+    .card {
+        border-width: 2px;
+        height: 67px;
+        width: 53px;
+    }
+
+    .rainbow {
+        height: 67px;
+        width: 53px;
+    }
+}
+
+/* tablets */
+@media only screen
+and (min-width: 481px)
+and (max-width: 1024px) {
     .title {
         font-size: 4vmin;
         margin-left: 20px;
@@ -357,43 +445,25 @@ button:focus {outline:0;}
     }
 
     #game-area {
-        width: 380px;
+        width: 488px;
         padding: 5px;
     }
 
     .card {
         border-width: 2px;
-        height: 95px;
-        width: 81px;
+        height: 126px;
+        width: 108px;
     }
 
     .rainbow {
-        height: 95px;
-        width: 81px;
+        height: 126px;
+        width: 108px;
     }
 }
 
-/* halfway point on browser */
-/* @media (max-width: 800px) {
-    #game-area {
-        width: 180px;
-        padding: 5px;
-    }
-
-    .card {
-        border-width: 2px;
-        height: 75px;
-        width: 61px;
-    }
-
-    .rainbow {
-        height: 75px;
-        width: 61px;
-    }
-} */
-
-/* medium devices (tablets, less than 992px) */
-@media (max-width: 991px) {
+/* desktops and laptops computers */
+@media only screen
+and (min-width: 1224px) {
     .title {
         margin-left: 20px;
     }
@@ -403,8 +473,9 @@ button:focus {outline:0;}
     }
 }
 
-/* large devices (desktops, less than 1200px) */
-@media (max-width: 1199px) {
+/* very large screen devices */
+@media only screen 
+and (min-width: 1824px) {
 
 }
 
