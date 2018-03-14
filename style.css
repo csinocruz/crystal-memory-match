@@ -250,14 +250,92 @@ button:focus {outline:0;}
 /* ***** START OF MEDIA QUERIES ***** */
 
 /* mobiles in portrait mode */
-/* @media only screen
+@media only screen
 and (max-width: 320px) {
+    .modal-content {
+        font-size: 4vmin;
+        width: 70%;
+    }
 
-} */
+    #crystal-head {
+        height: 390px;
+        margin-left: 100px;
+        filter: blur(3px);
+    }
+
+    .title {
+        font-size: 7vmin;
+    }
+
+    .fa-volume-off {
+        margin-right: 7px;
+    }
+
+    .nav-wrap {
+        text-align: center;
+    }
+
+    .nav-wrap ul {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        /* For IE, the outcast */
+        zoom:1;
+        *display: inline;
+    }
+
+    .nav-wrap li {
+        float: left;
+        padding: 2px 5px;
+        border: 1px solid black;
+    }
+
+    .nav-bar {
+        float: none;
+        margin-top: 10px;
+    }
+
+    .nav-bar > ul > li {
+        font-size: 3vmin;
+    }
+
+    .stats-container {
+        font-size: 3vmin;
+        position: fixed;
+        bottom: 50px;
+    }
+
+    .label {
+        margin-bottom: 4px;
+    }
+
+    button {
+        margin-top: 5px;
+        font-size: 3vmin;
+    }
+
+    #game-area {
+        width: 92%;
+        padding: 5px;
+        margin: auto;
+        position: relative;
+    }
+
+    .card {
+        border-width: 2px;
+        height: 67px;
+        width: 53px;
+    }
+
+    .rainbow {
+        height: 67px;
+        width: 53px;
+    }
+}
 
 /* mobiles in landscape mode */
 @media only screen
-/* and (min-width: 321px) */
+and (min-width: 321px)
 and (max-width: 480px) {
     .modal-content {
         font-size: 4vmin;
