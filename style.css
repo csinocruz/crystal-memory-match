@@ -251,6 +251,7 @@ button:focus {outline:0;}
 
 /* mobiles in portrait mode */
 @media only screen
+and (min-width: 100px)
 and (max-width: 320px) {
     .modal-content {
         font-size: 4vmin;
@@ -279,7 +280,6 @@ and (max-width: 320px) {
         display: inline-block;
         margin: 0;
         padding: 0;
-        /* For IE, the outcast */
         zoom:1;
         *display: inline;
     }
