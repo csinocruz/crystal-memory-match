@@ -202,6 +202,10 @@ function renderStatsToDOM() {
     $('.games-played-val').text(gamesPlayed);
 };
 
+function gameFinish() {
+    console.log('You\'ve won!');
+};
+
 function resetGame() {
     firstCardClicked = null;
     secondCardClicked = null;
