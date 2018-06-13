@@ -9,7 +9,7 @@ $(document).ready(function(){
 });
 
 // music toggle
-var audio = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/soundscape.mp3');
+var audio = new Audio('/Applications/MAMP/htdocs/LFZ/crystal-memory-match/assets/sounds/soundscape.mp3');
 audio.volume = 0.2;
 audio.loop = true;
 audio.play();
