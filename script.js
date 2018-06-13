@@ -9,12 +9,12 @@ $(document).ready(function(){
 });
 
 // music toggle
-var audio = new Audio('/Applications/MAMP/htdocs/LFZ/crystal-memory-match/assets/sounds/soundscape.mp3');
-audio.volume = 0.2;
-audio.loop = true;
-audio.play();
+// var audio = new Audio('/Applications/MAMP/htdocs/LFZ/crystal-memory-match/assets/sounds/soundscape.mp3');
+// audio.volume = 0.2;
+// audio.loop = true;
+// audio.play();
 
-var musicPlaying = true;
+// var musicPlaying = true;
 var modal = $('#instructionsModal');
 var canClick = true;
 var firstCardClicked = null;
@@ -43,15 +43,15 @@ var animalImages = [
     'assets/polygon-animals/wolf.jpg',
 ];
 
-function togglePlay() {
-    if (musicPlaying) {
-        audio.pause()
-        musicPlaying = false;
-    } else {
-        audio.play();
-        musicPlaying = true;
-    }
-};
+// function togglePlay() {
+//     if (musicPlaying) {
+//         audio.pause()
+//         musicPlaying = false;
+//     } else {
+//         audio.play();
+//         musicPlaying = true;
+//     }
+// };
 
 function initializeApp() {
     pickRandomCards(animalImages);
