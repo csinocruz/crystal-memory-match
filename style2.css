@@ -123,6 +123,8 @@ ol { list-style-type: decimal; }
     border-style: outset;
     margin-bottom: 5%;
     transition: 2s;
+
+    -webkit-transform:translate3d(0,0,0);
 }
   
 .card:after {
@@ -157,7 +159,7 @@ ol { list-style-type: decimal; }
     animation-direction: normal;
 
     /* -webkit-perspective: 1000; */
-    -webkit-backface-visibility: hidden;
+    /* -webkit-backface-visibility: hidden; */
     /* -webkit-transform-style: preserve-3d; */
     /* -webkit-transform: translate3d(0, 0, 0); */
 }
