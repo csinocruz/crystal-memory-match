@@ -6,7 +6,7 @@
 body {
     font-family: 'Cormorant Unicase', serif;
     letter-spacing: 1px;
-    font-weight: 300;
+    font-weight: 400;
     background-color: black;
     color: #e0fffd;
     overflow: hidden;
@@ -62,7 +62,7 @@ a {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 40%; 
+    width: 60%; 
 }
 
 .close {
@@ -104,14 +104,14 @@ ol { list-style-type: decimal; }
 }
 
 .stats-container {
+    font-size: 3vmin;
     margin-right: 3%;
-    font-size: 2vmin;
 }
 .label {    margin: 25% 0;}
 
 #game-area {
     width: 75%;
-    max-width: 800px;
+    max-width: 750px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
