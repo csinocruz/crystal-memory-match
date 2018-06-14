@@ -173,7 +173,7 @@ ol { list-style-type: decimal; }
     display: none;
 }
 
-/* @keyframes spinner {
+@keyframes spinner {
     from {
       transform: rotateY(0deg);
     }
@@ -187,7 +187,10 @@ ol { list-style-type: decimal; }
     -moz-animation:    spinner 1s 1; 
     -o-animation:      spinner 1s 1; 
     animation:         spinner 1s 1; 
-} */
+
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+}
 
 @-webkit-keyframes Gradient {
 	0% {
