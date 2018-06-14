@@ -1,0 +1,279 @@
+* {
+    margin:0;
+    padding:0;
+ }
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    background-color: black;
+    color: #e0fffd;
+    overflow: hidden;
+}
+
+.nav-wrap { margin-top: 15px; }
+
+.title { font-size: 5vmin;}
+
+ul {
+    list-style-type: none;
+    margin: 2%;
+}
+
+li {
+    display: inline;
+    margin: 3%;
+}
+
+a {
+    color: #e0fffd;
+    text-decoration: none;
+}
+
+.nav-bar > ul > li:hover { text-decoration: underline; cursor: pointer;}
+
+.nav-wrap {
+    text-align: center;
+}
+
+.nav-bar > ul > li {
+    font-size: 2vmin;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.6); 
+}
+
+.modal-content {
+    border-radius: 10px;
+    background-color: #fefefe;
+    font-weight: 400;
+    color: black;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; 
+}
+
+.close {
+    color: #858585;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.instructions > li {
+    display: list-item;
+    cursor: auto;
+}
+ol { list-style-type: decimal; }
+/* ***** END OF MODAL ***** */
+
+
+/* #music {
+    display: inline;
+    cursor: pointer;
+}
+#music:hover { text-decoration: underline; }
+
+.fa-volume-off {
+    margin-right: 10px;
+} */
+
+.stats-container {
+    /* padding-top: 5%; */
+    margin: 3%;
+    font-size: 3vmin;
+    border: 2px solid yellow;
+}
+
+#game-area {
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  } 
+  
+.card {
+    position: relative;
+    width: 20%;
+    border: 2px solid rgb(188, 105, 255);
+    border-style: outset;
+    margin-bottom: 5%;
+    transition: 2s;
+}
+  
+.card:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+  
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.card:hover { 
+    box-shadow: 0px 0px 20px 1px #ffffff;
+    transition: 1s; 
+}
+
+.rainbow {
+    transition: 4s;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+	color: #fff;
+	background: linear-gradient(-45deg,red, hotpink, yellow, cornflowerblue, darkorchid, darkblue);
+	background-size: 200% 100%;
+	-webkit-animation: Gradient 6s ease infinite;
+	-moz-animation: Gradient 6s ease infinite;
+    animation: Gradient 6s ease infinite;
+    animation-direction: normal;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.front, .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.reveal .back {
+    display: none;
+}
+
+@keyframes spinner {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+}
+
+.spin {
+    -webkit-animation: spinner 1s 1; 
+    -moz-animation:    spinner 1s 1; 
+    -o-animation:      spinner 1s 1; 
+    animation:         spinner 1s 1; 
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+button {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    transition: all 1.5s ease;
+    padding: 3px 7px;
+    background: #e0fffd;
+    border: black;
+    margin-top: 20px;
+    font-size: 2vmin;
+}
+button:hover { 
+    background: #404bff;
+    box-shadow: 0px 0px 19px #9e9ce8;
+    color: white;
+    cursor: pointer;
+}
+button:focus {outline:0;}
+
+#crystal-head {
+    position: fixed;
+    bottom: -17px;
+    z-index: -1;
+}
+
+#credit {
+    /* display: none; */
+    font-size: 8px;
+    color: #e0fffd;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+}
+
+/* ---------- MEDIA QUERIES START ---------- */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        #crystal-head {
+            filter: blur(3px);
+        }
+    }
+    
+    /* Smartphones (landscape) ----------- */
+    @media only screen and (min-width : 321px) {
+        /* #crystal-head {
+            filter: blur(3px);
+        } */
+    }
+    
+    /* Smartphones (portrait) ----------- */
+    @media only screen and (max-width : 320px) {
+        #crystal-head {
+            filter: blur(3px);
+        }
+    }
