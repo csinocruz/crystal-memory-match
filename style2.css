@@ -96,20 +96,23 @@ ol { list-style-type: decimal; }
     margin-right: 10px;
 } */
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .stats-container {
-    /* padding-top: 5%; */
-    margin: 3%;
-    font-size: 3vmin;
-    border: 2px solid yellow;
+    margin-right: 3%;
+    font-size: 2vmin;
 }
 
 #game-area {
-    width: 80%;
+    width: 75%;
     max-width: 800px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 auto;
   } 
   
 .card {
