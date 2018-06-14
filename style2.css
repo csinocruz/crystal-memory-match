@@ -4,9 +4,9 @@
  }
 
 body {
-    font-family: 'Cormorant Unicase', serif;
+    font-family: 'Concert One', cursive;
     letter-spacing: 1px;
-    font-weight: 400;
+    /* font-weight: 400; */
     background-color: black;
     color: #e0fffd;
     overflow: hidden;
@@ -57,7 +57,7 @@ a {
 .modal-content {
     border-radius: 10px;
     background-color: #fefefe;
-    font-weight: 300;
+    /* font-weight: 300; */
     color: black;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
@@ -240,8 +240,8 @@ ol { list-style-type: decimal; }
 }
 
 button {
-    font-family: 'Cormorant Unicase', serif;
-    font-weight: 400;
+    font-family: 'Concert One', cursive;
+    /* font-weight: 400; */
     transition: all 1.5s ease;
     padding: 3px 7px;
     background: #e0fffd;
