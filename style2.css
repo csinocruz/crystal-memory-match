@@ -86,7 +86,7 @@ ol { list-style-type: decimal; }
 /* ***** END OF MODAL ***** */
 
 
-/* #music {
+#music {
     display: inline;
     cursor: pointer;
 }
@@ -94,7 +94,7 @@ ol { list-style-type: decimal; }
 
 .fa-volume-off {
     margin-right: 10px;
-} */
+}
 
 .container {
     display: flex;
@@ -106,6 +106,7 @@ ol { list-style-type: decimal; }
     margin-right: 3%;
     font-size: 2vmin;
 }
+.label {    margin: 25% 0;}
 
 #game-area {
     width: 75%;
