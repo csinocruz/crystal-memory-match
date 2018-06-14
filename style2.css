@@ -123,6 +123,7 @@ ol { list-style-type: decimal; }
     border-style: outset;
     margin-bottom: 5%;
     transition: 2s;
+    z-index: 1;
 }
   
 .card:after {
