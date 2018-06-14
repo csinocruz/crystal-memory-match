@@ -114,6 +114,8 @@ ol { list-style-type: decimal; }
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    -webkit-transform: translateZ(0);
   } 
   
 .card {
@@ -127,6 +129,7 @@ ol { list-style-type: decimal; }
     /* -webkit-transform:translate3d(0,0,0); */
     -webkit-perspective: 1000;
     -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
 }
   
 .card:after {
