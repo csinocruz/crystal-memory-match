@@ -123,22 +123,12 @@ ol { list-style-type: decimal; }
     border-style: outset;
     margin-bottom: 5%;
     transition: 2s;
-
-    -webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: translate3d(0, 0, 0);
 }
   
 .card:after {
     content: "";
     display: block;
     padding-bottom: 100%;
-
-    -webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: translate3d(0, 0, 0);
 }
   
 .content {
@@ -182,11 +172,6 @@ ol { list-style-type: decimal; }
     position: absolute;
     height: 100%;
     width: 100%;
-
-    -webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: translate3d(0, 0, 0);
 }
 
 .reveal .back {
@@ -208,11 +193,6 @@ ol { list-style-type: decimal; }
     -moz-animation:    spinner 1s 1; 
     -o-animation:      spinner 1s 1; 
     animation:         spinner 1s 1; 
-
-    -webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: translate3d(0, 0, 0);
 }
 
 @-webkit-keyframes Gradient {
