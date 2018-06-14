@@ -12,7 +12,6 @@ $(document).ready(function(){
 var audio = new Audio('assets/sounds/soundscape.mp3');
 audio.volume = 0.2;
 audio.loop = true;
-audio.play();
 
 var musicPlaying = false;
 var modal = $('#instructionsModal');
