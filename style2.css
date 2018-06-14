@@ -124,7 +124,9 @@ ol { list-style-type: decimal; }
     margin-bottom: 5%;
     transition: 2s;
 
-    -webkit-transform:translate3d(0,0,0);
+    /* -webkit-transform:translate3d(0,0,0); */
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
 }
   
 .card:after {
@@ -158,8 +160,8 @@ ol { list-style-type: decimal; }
     animation: Gradient 6s ease infinite;
     animation-direction: normal;
 
-    /* -webkit-perspective: 1000; */
-    /* -webkit-backface-visibility: hidden; */
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
     /* -webkit-transform-style: preserve-3d; */
     /* -webkit-transform: translate3d(0, 0, 0); */
 }
