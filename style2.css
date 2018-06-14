@@ -123,14 +123,12 @@ ol { list-style-type: decimal; }
     border-style: outset;
     margin-bottom: 5%;
     transition: 2s;
-    z-index: 1;
 }
   
 .card:after {
     content: "";
     display: block;
     padding-bottom: 100%;
-    z-index: 1;
 }
   
 .content {
@@ -175,7 +173,7 @@ ol { list-style-type: decimal; }
     display: none;
 }
 
-@keyframes spinner {
+/* @keyframes spinner {
     from {
       transform: rotateY(0deg);
     }
@@ -189,7 +187,7 @@ ol { list-style-type: decimal; }
     -moz-animation:    spinner 1s 1; 
     -o-animation:      spinner 1s 1; 
     animation:         spinner 1s 1; 
-}
+} */
 
 @-webkit-keyframes Gradient {
 	0% {
