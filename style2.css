@@ -167,6 +167,11 @@ ol { list-style-type: decimal; }
     position: absolute;
     height: 100%;
     width: 100%;
+
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: translate3d(0, 0, 0);
 }
 
 .reveal .back {
@@ -180,6 +185,7 @@ ol { list-style-type: decimal; }
     to {
       transform: rotateY(360deg);
     }
+    
 }
 
 .spin {
