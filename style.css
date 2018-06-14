@@ -1,3 +1,8 @@
+* {
+    margin:0;
+    padding:0;
+ }
+
 body {
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
@@ -84,7 +89,7 @@ ol { list-style-type: decimal; }
 /* ***** END OF MODAL ***** */
 
 
-#music {
+/* #music {
     display: inline;
     cursor: pointer;
 }
@@ -92,28 +97,28 @@ ol { list-style-type: decimal; }
 
 .fa-volume-off {
     margin-right: 10px;
-}
+} */
 
 .stats-container {
-    padding-top: 40px;
-    margin-left: 3%;
-    font-size: x-large;
+    padding-top: 5%;
+    margin: 3%;
+    font-size: 3vmin;
+    border: 2px solid yellow;
 }
 
 #game-area {
+    border: 2px solid hotpink;
+    margin: 0 auto;
+    height: 720px;
     width: 720px;
-    position: absolute;
-    margin-left: 30%;
-    margin-top: 10px;
     z-index: 1;
-    border-radius: 7px;
-    padding: 10px;
+
 }
 
 .card {
-    border-color: #9d75f1;
+    /* border-color: #9d75f1;
     border-style: outset;
-    border-width: 5px;
+    border-width: 3px; */
     height: 183px;
     width: 157px;
     margin: 5px;
@@ -128,8 +133,8 @@ ol { list-style-type: decimal; }
 
 .rainbow {
     transition: 4s;
-    height: 184px;
-    width: 158px;
+    height: 100%;
+    width: 100%;
     position: relative;
     display: inline-block;
 	color: #fff;
@@ -143,7 +148,7 @@ ol { list-style-type: decimal; }
 
 .card img {
     width: 100%;
-    height: 100%;
+    height: 99%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -250,7 +255,7 @@ button:focus {outline:0;}
 /* ***** START OF MEDIA QUERIES ***** */
 
 /* mobiles in portrait mode */
-@media only screen
+/* @media only screen
 and (min-width: 100px)
 and (max-width: 320px) {
     .modal-content {
@@ -331,10 +336,10 @@ and (max-width: 320px) {
         height: 67px;
         width: 53px;
     }
-}
+} */
 
 /* mobiles in landscape mode */
-@media only screen
+/* @media only screen
 and (min-width: 321px)
 and (max-width: 480px) {
     .modal-content {
@@ -364,7 +369,7 @@ and (max-width: 480px) {
         display: inline-block;
         margin: 0;
         padding: 0;
-        /* For IE, the outcast */
+
         zoom:1;
         *display: inline;
     }
@@ -416,10 +421,10 @@ and (max-width: 480px) {
         height: 67px;
         width: 53px;
     }
-}
+} */
 
 /* tablets */
-@media only screen
+/* @media only screen
 and (min-width: 481px)
 and (max-width: 1024px) {
     .title {
@@ -459,10 +464,10 @@ and (max-width: 1024px) {
         height: 126px;
         width: 108px;
     }
-}
+} */
 
 /* desktops and laptops computers */
-@media only screen
+/* @media only screen
 and (min-width: 1224px) {
     .title {
         margin-left: 20px;
@@ -471,12 +476,12 @@ and (min-width: 1224px) {
     #crystal-head {
         height: 490px;
     }
-}
+} */
 
 /* very large screen devices */
-@media only screen 
+/* @media only screen 
 and (min-width: 1824px) {
 
-}
+} */
 
 /* ***** END OF MEDIA QUERIES ***** */

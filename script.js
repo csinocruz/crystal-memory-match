@@ -14,7 +14,7 @@ audio.volume = 0.2;
 audio.loop = true;
 audio.play();
 
-var musicPlaying = true;
+var musicPlaying = false;
 var modal = $('#instructionsModal');
 var canClick = true;
 var firstCardClicked = null;
