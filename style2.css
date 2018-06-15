@@ -103,8 +103,8 @@ ol { list-style-type: decimal; padding: 20px; }
 }
 #music:hover { text-decoration: underline; }
 
-.fa-volume-off {
-    margin-right: 12px;
+.svg-inline--fa.fa-w-8 {
+    width: 1.125em;
 }
 
 .container {
