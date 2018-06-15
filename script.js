@@ -112,17 +112,11 @@ function clickHandler() {
         if (firstCardClicked === null) {
             firstCardClicked = $(this).off('click');
         } else {
+            attempts++;
             secondCardClicked = $(this).off('click');
             canClick = false;
             // MATCHING **********
             if (firstCardClicked.find('img').attr('src') === secondCardClicked.find('img').attr('src')) {
-                // var sparkle = new Audio('/Users/francescasinocruz/Desktop/LFZ/crystal-memory-match/assets/sounds/twinkle.mp3');
-                // sparkle.volume = 0.2;
-                // sparkle.play();
-                // handles for the first card
-                setTimeout(function () {
-                    // sparkle.pause();
-                }, 4600);
                 setTimeout(function() {
                     firstCardClicked.css({
                         'opacity': '0'
@@ -140,17 +134,25 @@ function clickHandler() {
                     canClick = true;
                 }, 1100);
                 matchCounter++;
+                updateStats();
+                renderStatsToDOM();
                 if (matchCounter === 8) {
+                    renderStatsToDOM();
                     console.log('You have found all of the matching cards!');
+                    matchCounter = 0;
+                    attempts = 0;
+                    accuracy = 0;
+                    gamesPlayed++
                     setTimeout(function() {
                         $( "#crystal-head" ).effect( "shake" );
                         nextGame()
                     }, 1000);
-                    matchCounter = 0;
                 }
                 // if user plays multiple games
                 totalMatchesCounter++;
             } else { // NOT MATCHING **********
+                updateStats();
+                renderStatsToDOM();
                 firstCardClicked.click(clickHandler);
                 secondCardClicked.click(clickHandler);
 
@@ -185,8 +187,6 @@ function clickHandler() {
                     canClick = true;
                 }, 2500);
             }
-            attempts++;
-            updateStats();
         }
     }
     // ** end of canClick if statement **
@@ -195,7 +195,9 @@ function clickHandler() {
 
 function updateStats() {
     accuracy = parseInt(matchCounter/attempts *100);
-    renderStatsToDOM();
+    if (matchCounter === 0 && attempts === 0) {
+        accuracy = 0;
+    }
 };
 
 function renderStatsToDOM() {
@@ -234,10 +236,6 @@ function nextGame() {
     var br = $('<br>');
     $(winMessage).append(br,newGameBtn);
     $('#game-area').hide().append(winMessage).fadeIn(4000);
-    setTimeout(function() {
-        // $('#game-area').hide().append(winMessage).fadeIn(4000);
-        // $( "#crystal-head" ).effect( "shake" );
-    }, 1000);
 };
 
 function clickNewGame() {
@@ -245,7 +243,6 @@ function clickNewGame() {
     $('#game-area').text('');
     firstCardClicked = null;
     secondCardClicked = null;
-    gamesPlayed++;
     renderStatsToDOM();
     $('.card').remove();
     initializeApp();
