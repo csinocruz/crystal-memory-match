@@ -233,8 +233,9 @@ function nextGame() {
     });
     var br = $('<br>');
     $(winMessage).append(br,newGameBtn);
+    $('#game-area').hide().append(winMessage).fadeIn(4000);
     setTimeout(function() {
-        $('#game-area').hide().append(winMessage).fadeIn(4000);
+        // $('#game-area').hide().append(winMessage).fadeIn(4000);
         // $( "#crystal-head" ).effect( "shake" );
     }, 1000);
 };
