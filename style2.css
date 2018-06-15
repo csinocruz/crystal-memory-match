@@ -6,10 +6,9 @@
 body {
     font-family: 'Concert One', cursive;
     letter-spacing: 1px;
-    /* font-weight: 400; */
     background-color: black;
     color: #e0fffd;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .nav-wrap { margin-top: 15px; }
@@ -57,13 +56,13 @@ a {
 .modal-content {
     border-radius: 10px;
     background-color: #fefefe;
-    /* font-weight: 300; */
     color: black;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #888;
     width: 60%; 
 }
+.modal-content>p,blockquote {margin-top: 15px;}
 
 .close {
     color: #858585;
@@ -83,9 +82,20 @@ a {
     display: list-item;
     cursor: auto;
 }
-ol { list-style-type: decimal; }
+ol { list-style-type: decimal; padding: 20px; }
 /* ***** END OF MODAL ***** */
 
+.win-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    font-size: 7vmin;
+    z-index: 2;
+    width: 100%;
+    height: 50%;
+}
 
 #music {
     display: inline;
@@ -111,7 +121,7 @@ ol { list-style-type: decimal; }
 
 #game-area {
     width: 75%;
-    max-width: 750px;
+    max-width: 620px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -147,7 +157,7 @@ ol { list-style-type: decimal; }
 
 .card:hover { 
     box-shadow: 0px 0px 20px 1px #ffffff;
-    transition: 1s; 
+    transition: 0.5s; 
 }
 
 .rainbow {
@@ -168,6 +178,9 @@ ol { list-style-type: decimal; }
     -webkit-backface-visibility: hidden;
     /* -webkit-transform-style: preserve-3d; */
     /* -webkit-transform: translate3d(0, 0, 0); */
+
+    /* TESTING PURPOSES */
+    display: none;
 }
 
 .card img {
@@ -197,10 +210,10 @@ ol { list-style-type: decimal; }
 }
 
 .spin {
-    -webkit-animation: spinner 1s 1; 
-    -moz-animation:    spinner 1s 1; 
-    -o-animation:      spinner 1s 1; 
-    animation:         spinner 1s 1; 
+    -webkit-animation: spinner 0.5s 1; 
+    -moz-animation:    spinner 0.5s 1; 
+    -o-animation:      spinner 0.5s 1; 
+    animation:         spinner 0.5s 1; 
 }
 
 @-webkit-keyframes Gradient {
@@ -241,7 +254,6 @@ ol { list-style-type: decimal; }
 
 button {
     font-family: 'Concert One', cursive;
-    /* font-weight: 400; */
     transition: all 1.5s ease;
     padding: 3px 7px;
     background: #e0fffd;
