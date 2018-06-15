@@ -142,7 +142,11 @@ function clickHandler() {
                 matchCounter++;
                 if (matchCounter === 8) {
                     console.log('You have found all of the matching cards!');
-                    nextGame();
+                    setTimeout(function() {
+                        $( "#crystal-head" ).effect( "shake" );
+                        nextGame()
+                    }, 1000);
+                    matchCounter = 0;
                 }
                 // if user plays multiple games
                 totalMatchesCounter++;
@@ -159,7 +163,7 @@ function clickHandler() {
                 }, 1500);
                 setTimeout(function () {
                     firstCardClicked.toggleClass('reveal');
-                }, 2000);
+                }, 1500);
                 setTimeout(function () {
                     firstCardClicked.removeClass('spin');
                     firstCardClicked = null;
@@ -174,7 +178,7 @@ function clickHandler() {
                 }, 1500);
                 setTimeout(function () {
                     secondCardClicked.toggleClass('reveal');
-                }, 2000);
+                }, 1500);
                 setTimeout(function () {
                     secondCardClicked.removeClass('spin');
                     secondCardClicked = null;
@@ -218,16 +222,26 @@ function resetGame() {
 };
 
 function nextGame() {
+    var winMessage = $('<div>', {
+        text: 'You Win!',
+        class: 'win-container',
+    });
     var newGameBtn = $('<button/>', {
         text: 'New Game',
         class: 'newGame',
         click: clickNewGame
     });
-    $('.stats-container').append(newGameBtn);
+    var br = $('<br>');
+    $(winMessage).append(br,newGameBtn);
+    setTimeout(function() {
+        $('#game-area').hide().append(winMessage).fadeIn(4000);
+        // $( "#crystal-head" ).effect( "shake" );
+    }, 1000);
 };
 
 function clickNewGame() {
     $('.newGame').remove();
+    $('#game-area').text('');
     firstCardClicked = null;
     secondCardClicked = null;
     gamesPlayed++;
