@@ -180,7 +180,7 @@ ol { list-style-type: decimal; padding: 20px; }
     /* -webkit-transform: translate3d(0, 0, 0); */
 
     /* TESTING PURPOSES */
-    /* display: none; */
+    display: none;
 }
 
 .card img {
@@ -210,10 +210,10 @@ ol { list-style-type: decimal; padding: 20px; }
 }
 
 .spin {
-    -webkit-animation: spinner 0.5s 1; 
-    -moz-animation:    spinner 0.5s 1; 
-    -o-animation:      spinner 0.5s 1; 
-    animation:         spinner 0.5s 1; 
+    -webkit-animation: spinner 1s 1; 
+    -moz-animation:    spinner 1s 1; 
+    -o-animation:      spinner 1s 1; 
+    animation:         spinner 1s 1; 
 }
 
 @-webkit-keyframes Gradient {
